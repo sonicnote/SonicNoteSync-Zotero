@@ -1,0 +1,39 @@
+{
+  "name": "sonicnote-sync-zotero",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Sync recordings from SonicNote as Zotero note items with AI summaries.",
+  "config": {
+    "addonName": "SonicNote Sync",
+    "addonID": "sonicnote-sync@easylinkin.com",
+    "addonRef": "sonicnotesync",
+    "addonInstance": "SonicNoteSync",
+    "prefsPrefix": "extensions.sonicnotesync"
+  },
+  "author": "EasyLinkin",
+  "homepage": "https://ainote.easylinkin.com",
+  "license": "AGPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/easylinkin/sonicnote-sync-zotero.git"
+  },
+  "bugs": {
+    "url": "https://github.com/easylinkin/sonicnote-sync-zotero/issues"
+  },
+  "scripts": {
+    "start": "zotero-plugin serve",
+    "build": "zotero-plugin build && tsc --noEmit",
+    "release": "zotero-plugin release",
+    "test": "zotero-plugin test",
+    "update-deps": "npm update --save"
+  },
+  "dependencies": {
+    "zotero-plugin-toolkit": "^5.1.0-beta.13"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.9.3",
+    "zotero-plugin-scaffold": "^0.8.2",
+    "zotero-types": "^4.1.0-beta.4"
+  }
+}

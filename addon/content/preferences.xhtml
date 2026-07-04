@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<window id="sonicnotesync-settings"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        title="SonicNote Sync Settings"
+        style="width: 640px; height: 580px;">
+  <html:div style="padding:16px; display:flex; flex-direction:column; gap:14px; box-sizing:border-box; min-width:640px;">
+    <html:fieldset>
+      <html:legend style="font-weight:bold;">SonicNote 妙记账号</html:legend>
+      <html:div style="display:flex; align-items:center; gap:8px; margin-top:10px;">
+        <html:label style="width:9em; flex-shrink:0;" for="apiKey">API Key</html:label>
+        <html:input id="apiKey" type="password"
+                    style="flex:1 1 auto; min-width:200px;"
+                    placeholder="sk-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"/>
+        <html:button id="loginBtn" style="flex-shrink:0; white-space:nowrap;">登录</html:button>
+      </html:div>
+      <html:div id="loginStatus"
+                style="color:#1976d2; margin-top:10px; min-height:1.2em;"></html:div>
+    </html:fieldset>
+
+    <html:fieldset>
+      <html:legend style="font-weight:bold;">同步选项</html:legend>
+      <html:div style="display:flex; align-items:center; gap:8px; margin-top:10px;">
+        <html:label style="width:9em; flex-shrink:0;" for="collectionName">收藏夹名称</html:label>
+        <html:input id="collectionName" type="text" value="SonicNote" style="min-width:200px;"/>
+      </html:div>
+      <html:div style="margin-top:12px;">
+        <html:label style="display:flex; align-items:center; gap:6px;">
+          <html:input id="includeTranscript" type="checkbox"/>
+          同步转写正文（默认仅同步 AI 总结）
+        </html:label>
+      </html:div>
+      <html:div style="display:flex; align-items:center; gap:8px; margin-top:12px;">
+        <html:label style="width:9em; flex-shrink:0;" for="autoSyncIntervalMin">自动同步间隔(分钟,0=关)</html:label>
+        <html:input id="autoSyncIntervalMin" type="number" min="0" step="1" value="0" style="width:6em;"/>
+      </html:div>
+      <html:div style="display:flex; align-items:center; gap:8px; margin-top:12px;">
+        <html:label style="width:9em; flex-shrink:0;" for="serverUrl">服务器地址(可选)</html:label>
+        <html:input id="serverUrl" type="text" placeholder="留空 = 官方服务器" style="min-width:200px;"/>
+      </html:div>
+    </html:fieldset>
+
+    <html:div id="lastSync" style="color:#999; font-size:0.85em;"></html:div>
+
+    <html:div style="display:flex; justify-content:flex-end; gap:8px; margin-top:auto;">
+      <html:button id="cancelBtn">取消</html:button>
+      <html:button id="saveBtn" style="font-weight:bold;">保存并关闭</html:button>
+    </html:div>
+  </html:div>
+
+  <!-- External script: avoids CSP / inline-handler limits in Zotero 9 chrome windows. -->
+  <script src="chrome://sonicnotesync/content/prefs-window.js"/>
+</window>
