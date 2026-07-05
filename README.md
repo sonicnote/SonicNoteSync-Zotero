@@ -4,6 +4,10 @@
 
 每条录音 → 一个独立（standalone）Note 条目，放入专用 collection（默认 `SonicNote`），通过 tag 去重实现增量同步。
 
+📖 **官方使用文档：** [https://ainote.easylinkin.com/#/resources/docs](https://ainote.easylinkin.com/#/resources/docs)
+
+🎬 **视频教程：** [https://www.bilibili.com/video/BV1XmJ36BEYb/](https://www.bilibili.com/video/BV1XmJ36BEYb/?vd_source=e28745caa23df4182841fe10c0c4faff)
+
 ## 功能
 
 - 🔑 用 API Key 登录妙记（与官方 MCP/技能同一套认证）
